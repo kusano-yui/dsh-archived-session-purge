@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Archived session purge",
+    "description": "Permanently deletes archived sessions together with their logs, cached indexes, and workspace records."
+  }
+}

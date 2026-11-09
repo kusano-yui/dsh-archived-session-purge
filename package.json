@@ -1,0 +1,50 @@
+{
+  "name": "dsh-archived-purge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Permanently delete archived sessions, their logs, cached indexes, and workspace records.",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "archived",
+    "sessions",
+    "purge"
+  ],
+  "scripts": {
+    "test": "node test/purge.test.mjs && node test/client.test.mjs && node test/render.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/en.json",
+    "locale/zh.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
